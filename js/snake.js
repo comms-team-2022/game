@@ -1194,3 +1194,9 @@ SNAKE.Board =
       }
     }; // end return function
   })();
+
+// init.js
+new SNAKE.Board({
+  boardContainer: "game-area",
+  fullScreen: true,
+});

@@ -124,9 +124,8 @@ if (navigator.onLine && window.location.hostname === 'patorjk.com') {
 
     <div id="game-area" tabindex="0">
     </div>
-    <script type="text/javascript" src="./js/snake.js"></script>
-    <script type="text/javascript" src="./js/init.js"></script>
-    <script type="text/javascript">
+    <script type="module" src="./js/snake.js" ></script>
+    <script>
       function go_full_screen() {
         var elem = document.documentElement;
         try {
