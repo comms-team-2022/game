@@ -7,12 +7,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     if ($data->type == "GAME_END") {
 
-        // Just for testing
-        $sql = "INSERT INTO scores VALUES (?, 2)";
+        $sql = "INSERT INTO scores VALUES (?, ?)";
     
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "s", $data->user);
+            mysqli_stmt_bind_param($stmt, "si", $data->user, $data->score);
             
             // Attempt to execute the prepared statement
             mysqli_stmt_execute($stmt);

@@ -72,17 +72,6 @@ function getTheme () {
     }, 10);
 }
 
-if (navigator.onLine && window.location.hostname === 'patorjk.com') {
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-3312460-1']);
-    _gaq.push(['_trackPageview']);
-
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-}
 </script>
 </head>
 <body>
@@ -98,7 +87,8 @@ if (navigator.onLine && window.location.hostname === 'patorjk.com') {
             <option>Theme by Senura Ratnayake</option>
         </select>
       </div>
-      <div style="display:inline-block;margin-right:10px;">
+      <!-- TODO: Get rid of mode in javascript -->
+      <div style="display:none;">
         <span>Mode:</span>
         <select id="selectMode">
             <option value="100">Easy</option>
@@ -108,17 +98,9 @@ if (navigator.onLine && window.location.hostname === 'patorjk.com') {
             <option value="110">Rush</option>
         </select>
       </div>
-      <button onclick="go_full_screen()">Full Screen</button><br />
+      <br />
     </div>
 
-    <!--
-      <h2>Select which mode you would like to play in.</h2>
-      <button id="Easy">Easy</button><br />
-      <button id="Medium">Medium</button><br />
-      <button id="Difficult">Difficult</button>
-
-<button id="high-score">Get your current high score for this game.</button>
--->
     <div id="mode-wrapper" style="display: inline; width: auto;">
     </div>
 

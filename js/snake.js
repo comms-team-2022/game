@@ -4,6 +4,8 @@ First version by Patrick Gillespie - I've since merged in a good number of githu
 http://patorjk.com/games/snake 
 */
 
+import post from "./js-to-server.js";
+
 /**
  * @module Snake
  * @class SNAKE
@@ -432,7 +434,9 @@ SNAKE.Snake =
 
         handleEndCondition(playingBoard.handleDeath);
 
-        console.log("I died lol");
+        // Send score to server
+        // TODO: use actual user
+        post({ type: "GAME_END", user: "joe", score: me.snakeLength });
       };
 
       /**
@@ -753,8 +757,7 @@ SNAKE.Board =
 
         elmAboutPanel = document.createElement("div");
         elmAboutPanel.className = "snake-panel-component";
-        elmAboutPanel.innerHTML =
-          "<a href='http://patorjk.com/blog/software/' class='snake-link'>more patorjk.com apps</a> - <a href='https://github.com/patorjk/JavaScript-Snake' class='snake-link'>source code</a> - <a href='https://www.youtube.com/channel/UCpcCLm9y6CsjHUrCvJHYHUA' class='snake-link'>pat's youtube</a>";
+        elmAboutPanel.innerHTML = "<a href='credits.html' class='snake-link'>Credits</a>";
 
         elmLengthPanel = document.createElement("div");
         elmLengthPanel.className = "snake-panel-component";

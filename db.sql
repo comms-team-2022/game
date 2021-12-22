@@ -1,7 +1,5 @@
--- Statements to setup the initial tables
-
--- Test table
 CREATE TABLE scores (
-    user TEXT,
+    email TEXT PRIMARY KEY,
+    name TEXT,
     score INT
 );
